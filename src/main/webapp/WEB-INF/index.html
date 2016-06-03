@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>HyperMatrix</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="./resource/css/index.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="./resource/css/svg.css" media="screen" type="text/css" />
+	<script src="./resource/js/jquery-1.5.1.js"></script>
+	<script src="./resource/js/container.js"></script>
+
+  </head>
+  
+<body>
+
+<script type="text/javascript">  
+	window.onload=function(){
+		toPage("home");
+			
+			
+		
+	}
+	function slide(){
+		$('#displayDiv').slideBox();
+	}
+	function displaySvg(){
+		var diskShadow = " <svg class='flat_icon' xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' ><path class='circle' d='M50,2.125c26.441,0,47.875,21.434,47.875,47.875S76.441,97.875,50,97.875C17.857,97.875,2.125,76.441,2.125,50S23.559,2.125,50,2.125z'/><g class='icon'><path class='base' d='M72.848,75.133H27.151c-1.262,0-2.285-1.023-2.285-2.285V27.151c0-1.261,1.022-2.284,2.285-2.284h38.843l9.139,9.138v38.842C75.133,74.109,74.109,75.133,72.848,75.133z'/><path class='top' d='M65.992,24.867v15.994c0,1.261-1.021,2.285-2.283,2.285H36.29c-1.262,0-2.285-1.023-2.285-2.285V24.867H65.992z'/><path class='top_right' d='M55.711,27.914h8.379v12.185h-8.379V27.914z'/><path class='bottom' d='M65.992,75.133V53.047c0-1.261-1.021-2.285-2.283-2.285H36.29c-1.262,0-2.285,1.024-2.285,2.285v22.086H65.992z'/><path class='text' d='M39.718,58.377h20.563c0.211,0,0.381-0.17,0.381-0.379c0-0.211-0.17-0.381-0.381-0.381H39.718c-0.21,0-0.38,0.17-0.38,0.381C39.337,58.207,39.508,58.377,39.718,58.377z M60.281,63.709H39.718c-0.21,0-0.38,0.172-0.38,0.381c0,0.211,0.17,0.381,0.38,0.381h20.563c0.211,0,0.381-0.17,0.381-0.381C60.662,63.881,60.492,63.709,60.281,63.709z M60.281,69.801H39.718c-0.21,0-0.38,0.172-0.38,0.381c0,0.211,0.17,0.381,0.38,0.381h20.563c0.211,0,0.381-0.17,0.381-0.381C60.662,69.975,60.492,69.801,60.281,69.801z'/></g></svg>"
+			$(diskShadow).appendTo('#shadow-disk');
+		var pencilShadow = "<svg class='flat_icon' xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' ><path class='circle' d='M50,4.25c26.441,0,47.875,21.434,47.875,47.875C97.875,78.566,76.441,100,50,100C17.857,100,2.125,78.566,2.125,52.125C2.125,25.684,23.559,4.25,50,4.25z'/><g class='icon'><path class='wood' d='M26.683,55.108l16.801,16.84L23.62,75.635L26.683,55.108z'/><path class='base_top' d='M53.408,28.524l5.809,5.813L32.489,61.012l-5.807-5.75L53.408,28.524z'/><path class='base_bottom' d='M63.639,38.64l6.569,6.572L43.483,71.948l-6.635-6.575L63.639,38.64z'/><path class='base_middle' d='M58.868,33.931l6.569,6.573L38.714,67.239l-6.569-6.574L58.868,33.931z'/><path class='tip' d='M31.731,74.101l-8.635,1.776l1.776-8.638L31.731,74.101z'/><path class='eraser' d='M65.004,23.567l10.455,10.461c1.926,1.926,1.926,5.049,0,6.975L58.03,23.567C59.958,21.642,63.078,21.642,65.004,23.567z'/><path class='metal' d='M58.555,22.899l17.429,17.437c0.322,0.321,0.322,0.843,0,1.163l-4.244,4.246c-0.32,0.322-0.841,0.322-1.163,0L53.147,28.308c-0.319-0.32-0.319-0.842,0-1.161l4.245-4.248C57.715,22.578,58.235,22.578,58.555,22.899z'/></g></svg>"
+			$(pencilShadow).appendTo('#shadow-pencil');
+		var robotShadow = "<svg class='flat_icon' xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' viewBox='0 0 100 100' ><path class='circle' d='M50,2.125c26.441,0,47.875,21.434,47.875,47.875c0,26.441-21.434,47.875-47.875,47.875C17.857,97.875,2.125,76.441,2.125,50C2.125,23.559,23.559,2.125,50,2.125z'/><g class='icon'><path class='ears' d='M22.849,58.578l5.43,3.102V43.837l-5.43,3.102V58.578z M71.722,43.835V61.68l5.43-3.105V46.939L71.722,43.835z'/><path class='base' d='M31.381,33.751h37.237c1.714,0,3.102,1.39,3.102,3.103v32.582c0,1.715-1.388,3.104-3.102,3.104H31.381c-1.713,0-3.102-1.389-3.102-3.104V36.854C28.279,35.141,29.668,33.751,31.381,33.751z'/><path class='highlight' d='M29.83,33.751h18.618c0.855,0,1.552,0,1.552,0v38.788c0,0-0.695,0-1.552,0H29.83c-0.856,0-1.552-1.391-1.552-3.104V36.854C28.279,35.141,28.975,33.751,29.83,33.751z'/><path class='antenna' d='M55.431,22.891c0-3-2.431-5.43-5.431-5.43c-2.999,0-5.43,2.43-5.43,5.43c0,2.459,1.637,4.534,3.879,5.203v5.66h3.104v-5.66C53.795,27.425,55.431,25.349,55.431,22.891z'/><path class='eyes' d='M42.241,49.266c-2.141,0-3.879,1.736-3.879,3.879c0,2.141,1.736,3.879,3.879,3.879c2.142,0,3.879-1.738,3.879-3.879C46.121,51.002,44.383,49.266,42.241,49.266z M57.758,49.266c-2.141,0-3.879,1.736-3.879,3.879c0,2.141,1.736,3.879,3.879,3.879s3.879-1.738,3.879-3.879C61.637,51.002,59.898,49.266,57.758,49.266z'/></g></svg>"
+			$(robotShadow).appendTo('#shadow-robot');
+	}
+	function toPage(id) {
+		$.ajax({
+            type: "POST",
+            url: id+".do",
+            dataType: "html",
+            success: function(data){
+                document.getElementById("dynamicDiv").innerHTML=data;
+                if(id=="home"){slide();}
+                if(id=="caculate"){displaySvg();}
+            }
+        });
+	}
+
+	function setSize(){
+		var width=window.screen.availWidth;
+		var height=window.screen.availHeight;
+	}
+</script>
+
+	<div class="center header">
+		<div class="logo">
+			<img src="./resource/icons/logo.jpg"></div>
+		<div class="menu">
+			<ul>
+			<li class="float_left"><span onclick="toPage(this.id)" id="home">首页</span></li>
+			<li class="float_left"><span onclick="toPage(this.id)" id="caculate">在线计算</span></li>
+			<li class="float_left"><span onclick="toPage(this.id)" id="resource">技术资源</span></li>
+			<li class="float_left"><span onclick="toPage(this.id)" id="about">关于我们</span></li>
+			</ul>
+		</div>
+
+	</div>
+	 
+	<div id="dynamicDiv" class="center main">
+	
+	</div>
+	
+	
+	<div class="center footer">
+
+	<p style="padding-top:10px;">Copyright ©  Hyper-Matrix Team. All Rights Reserved</p>
+	</div>
+
+</body>
+</html>
