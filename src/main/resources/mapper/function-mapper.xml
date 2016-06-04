@@ -19,6 +19,9 @@
     <select id="queryById" resultMap="function">
         select * from hm_function f where f.function_id = #{fid}
     </select>
+    <select id="listByCategory" resultMap="function">
+    	select * from hm_function f where f.category_id = #{category}
+    </select>
     <delete id="delete">
 		delete from hm_function where function_id = #{fid}
     </delete>

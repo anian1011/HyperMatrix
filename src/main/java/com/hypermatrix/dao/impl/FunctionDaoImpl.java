@@ -39,4 +39,9 @@ public class FunctionDaoImpl extends MyDaoSupport implements FunctionDao {
 		getSqlSession().update("functionDao.update",t);
 	}
 
+	@Override
+	public List<Function> listByCategory(String category) {
+		return getSqlSession().selectList("functionDao.listByCategory",category);
+	}
+
 }

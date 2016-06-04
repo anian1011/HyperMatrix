@@ -1,5 +1,7 @@
 package com.hypermatrix.service;
 
+import java.util.List;
+
 import com.hypermatrix.entity.Function;
 /**
  * 功能Service
@@ -7,5 +9,7 @@ import com.hypermatrix.entity.Function;
  *
  */
 public interface FunctionService extends BaseService<Function>{
+
+	List<Function> listByCategory(String category);
 
 }

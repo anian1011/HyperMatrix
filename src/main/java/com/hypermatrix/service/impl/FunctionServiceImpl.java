@@ -42,6 +42,11 @@ public class FunctionServiceImpl implements FunctionService {
 	public void update(Function t) {
 		functionDao.update(t);
 	}
+
+	@Override
+	public List<Function> listByCategory(String category) {
+		return functionDao.listByCategory(category);
+	}
 	
 	
 }

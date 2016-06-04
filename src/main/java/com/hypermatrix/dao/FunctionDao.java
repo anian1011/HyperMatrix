@@ -1,5 +1,7 @@
 package com.hypermatrix.dao;
 
+import java.util.List;
+
 import com.hypermatrix.entity.Function;
 /**
  * 功能Dao接口
@@ -7,5 +9,7 @@ import com.hypermatrix.entity.Function;
  *
  */
 public interface FunctionDao extends BaseDao<Function>{
+
+	List<Function> listByCategory(String category);
 	
 }
