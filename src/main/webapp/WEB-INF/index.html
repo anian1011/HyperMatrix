@@ -26,7 +26,7 @@
 
 	</div>
 	 
-	<div id="dynamicDiv" class="center main">
+	<div class="center main" id="dynamicDiv" >
 	
 	</div>
 	
@@ -60,7 +60,7 @@
             url: id+".do",
             dataType: "html",
             success: function(data){
-                document.getElementById("dynamicDiv").innerHTML=data;
+                $("#dynamicDiv").html(data);
                 if(id=="home"){slide();}
                 if(id=="caculate"){displaySvg();}
             }
@@ -76,9 +76,14 @@
             url: "function/list.do?category="+category,
             dataType: "text",
             success: function(data){
-            	//TODO:显示到页面
+            	var obj = eval(data);
+            	//TODO 显示data到页面
+            		showError("functionMain","网站正在建设中！");
             }
         });
+	}
+	function showError(id,msg){
+		$("#"+id).html("<br/>"+msg+"<br/><br/>");
 	}
 	
 </script>
