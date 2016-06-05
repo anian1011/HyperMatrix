@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping(value="/",produces="application/html;charset=UTF-8")
 public class BaseController {
-	public static final String INDEX="index";
-	public static final String HOME="home";
-	public static final String CACULATE="caculate";
-	public static final String RESOURCE="resource";
-	public static final String ABOUT="about";
+	public static final String INDEX="index.html";
+	public static final String HOME="home.html";
+	public static final String CACULATE="caculate.html";
+	public static final String RESOURCE="resource.html";
+	public static final String ABOUT="about.html";
+	public static final String RESULT="result.jsp";
 	@RequestMapping("/index")
 	public String toIndex(){
 		return INDEX;
@@ -36,5 +37,9 @@ public class BaseController {
 	@RequestMapping("/about")
 	public String toAbout(){
 		return ABOUT;
+	}
+	@RequestMapping("/result")
+	public String toResult(){
+		return "result.jsp";
 	}
 }
