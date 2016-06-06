@@ -1,8 +1,14 @@
 package com.hypermatrix.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.hypermatrix.entity.Function;
+import com.hypermatrix.service.FunctionService;
 
 /**
  * 基本页面控制
@@ -18,6 +24,10 @@ public class BaseController {
 	public static final String RESOURCE="resource.html";
 	public static final String ABOUT="about.html";
 	public static final String RESULT="result.jsp";
+	
+	@Autowired
+	private FunctionService functionService;
+	
 	@RequestMapping("/index")
 	public String toIndex(){
 		return INDEX;
@@ -38,8 +48,11 @@ public class BaseController {
 	public String toAbout(){
 		return ABOUT;
 	}
-	@RequestMapping("/result")
-	public String toResult(){
-		return "result.jsp";
+	@RequestMapping("/toParam")
+	public String toParam( @RequestParam("fid") Integer fid,Model model){
+		Function f = functionService.queryById(fid);
+		model.addAttribute("function", f);
+		model.addAttribute("param", f.getParams().split(","));
+		return RESULT;
 	}
 }

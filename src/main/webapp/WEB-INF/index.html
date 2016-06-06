@@ -82,7 +82,7 @@
             	else{
             		$("#functionMain").empty();
             		for(var i=0;i<obj.length;i++){
-            			$("#functionMain").append("<div><a href='#'><img src='"+obj[i].image+"'/></a>"+obj[i].fname+"</div>")
+            			$("#functionMain").append("<div><a target='_blank' href='./toParam.do?fid="+obj[i].fid+"'><img src='"+obj[i].image+"'/></a>"+obj[i].fname+"</div>")
             		}
             		var mainHeight=(obj.length/4+1)*230;           		
             		$("#functionMain").css("height",mainHeight+"px");
