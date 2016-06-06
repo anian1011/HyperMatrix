@@ -49,7 +49,7 @@
     </servlet-mapping>  
 
     <welcome-file-list>  
-        <welcome-file>/jsps/index.jsp</welcome-file>  
+        <welcome-file>/index.do</welcome-file>  
     </welcome-file-list>  
   
 </web-app>  

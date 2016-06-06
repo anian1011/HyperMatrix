@@ -131,11 +131,20 @@ div h1{
 #functionMain{
 width: 800px;
 margin: 0px auto;
-margin-bottom:20px;
 border:1px solid #D3D3D3;
 background-color: #F7F7F7;
 text-align:center;
 clear:both;
+}
+#functionMain div{
+	float:left;
+	width:150px;
+	height:170px;
+	margin:30px 57px;
+}
+#functionMain div a img{
+	width:150px;
+	height:150px;
 }
 .footer{ 
 clear:both;
@@ -149,4 +158,5 @@ background-image: -webkit-gradient(linear,left bottom,left top,color-start(flora
 filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='floralwhite', endColorstr='rgba(178, 207, 135, 1)'); /*IE6 & IE7*/ 
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='floralwhite', endColorstr='rgba(178, 207, 135, 1)')"; /* IE8 */ 
 } 
+
 

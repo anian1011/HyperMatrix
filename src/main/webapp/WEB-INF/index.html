@@ -77,8 +77,16 @@
             dataType: "text",
             success: function(data){
             	var obj = eval(data);
-            	//TODO 显示data到页面
+            	if(obj.length==0)
             		showError("functionMain","网站正在建设中！");
+            	else{
+            		$("#functionMain").empty();
+            		for(var i=0;i<obj.length;i++){
+            			$("#functionMain").append("<div><a href='#'><img src='"+obj[i].image+"'/></a>"+obj[i].fname+"</div>")
+            		}
+            		var mainHeight=(obj.length/4+1)*230;           		
+            		$("#functionMain").css("height",mainHeight+"px");
+            	}
             }
         });
 	}
