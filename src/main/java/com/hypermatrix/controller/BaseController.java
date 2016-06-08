@@ -1,14 +1,10 @@
 package com.hypermatrix.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.hypermatrix.entity.Function;
-import com.hypermatrix.service.FunctionService;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 /**
  * 基本页面控制
@@ -23,20 +19,17 @@ public class BaseController {
 	public static final String CACULATE="caculate.html";
 	public static final String RESOURCE="resource.html";
 	public static final String ABOUT="about.html";
-	public static final String RESULT="result.jsp";
+
 	
-	@Autowired
-	private FunctionService functionService;
-	
-	@RequestMapping("/index")
+	@RequestMapping("/toIndex")
 	public String toIndex(){
 		return INDEX;
 	}
-	@RequestMapping("/home")
+	@RequestMapping("/toHome")
 	public String toHome(){
 		return HOME;
 	}
-	@RequestMapping("/caculate")
+	@RequestMapping("/toCaculate")
 	public String toCaculate(){
 		return CACULATE;
 	}
@@ -44,15 +37,9 @@ public class BaseController {
 	public String toResource(){
 		return RESOURCE;
 	}
-	@RequestMapping("/about")
+	@RequestMapping("/toAbout")
 	public String toAbout(){
 		return ABOUT;
 	}
-	@RequestMapping("/toParam")
-	public String toParam( @RequestParam("fid") Integer fid,Model model){
-		Function f = functionService.queryById(fid);
-		model.addAttribute("function", f);
-		model.addAttribute("param", f.getParams().split(","));
-		return RESULT;
-	}
+
 }

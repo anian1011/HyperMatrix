@@ -17,10 +17,10 @@
 			<img src="./resource/icons/logo.jpg"></div>
 		<div class="menu">
 			<ul>
-			<li class="float_left"><span onclick="toPage(this.id)" id="home">首页</span></li>
-			<li class="float_left"><span onclick="toPage(this.id)" id="caculate">在线计算</span></li>
-			<li class="float_left"><span onclick="toPage(this.id)" id="resource">技术资源</span></li>
-			<li class="float_left"><span onclick="toPage(this.id)" id="about">关于我们</span></li>
+			<li class="float_left"><span onclick="toPage(this.id)" id="Home">首页</span></li>
+			<li class="float_left"><span onclick="toPage(this.id)" id="Caculate">在线计算</span></li>
+			<li class="float_left"><span onclick="toPage(this.id)" id="Resource">技术资源</span></li>
+			<li class="float_left"><span onclick="toPage(this.id)" id="About">关于我们</span></li>
 			</ul>
 		</div>
 
@@ -38,7 +38,7 @@
 
 <script type="text/javascript">  
 	window.onload=function(){
-		toPage("home");
+		toPage("Home");
 			
 			
 		
@@ -56,13 +56,13 @@
 	}
 	function toPage(id) {
 		$.ajax({
-            type: "POST",
-            url: id+".do",
+            type: "GET",
+            url: "to"+id+".do",
             dataType: "html",
             success: function(data){
                 $("#dynamicDiv").html(data);
-                if(id=="home"){slide();}
-                if(id=="caculate"){displaySvg();}
+                if(id=="Home"){slide();}
+                if(id=="Caculate"){displaySvg();}
             }
         });
 	}

@@ -43,7 +43,7 @@ public class CaculateServiceImpl implements CaculateService {
 
 		WebFigure wf = (WebFigure) objectRef.get();
 
-		MWArray.disposeArray(caculateDto.getParams());
+		MWArray.disposeArray(result);
 	
 		return wf;
 	}

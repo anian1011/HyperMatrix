@@ -26,8 +26,12 @@ public class Function {
 	private String methodName;
 	//参数（json）
 	private String params;
+	//参数(数组形式用于jsp显示)
+	private String[] paramArray;
 	
-	
+	public String[] getParamArray() {
+		return params.split(",");
+	}
 	public Integer getFid() {
 		return fid;
 	}
