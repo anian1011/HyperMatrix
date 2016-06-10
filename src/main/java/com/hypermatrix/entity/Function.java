@@ -1,6 +1,5 @@
 package com.hypermatrix.entity;
 
-import java.util.List;
 
 import org.springframework.stereotype.Component;
 /**

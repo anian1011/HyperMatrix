@@ -1,10 +1,10 @@
 package com.hypermatrix.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +16,11 @@ import com.hypermatrix.service.FunctionService;
 import com.mathworks.toolbox.javabuilder.web.MWHttpSessionBinder;
 import com.mathworks.toolbox.javabuilder.webfigures.WebFigure;
 
+/**
+ * 核心功能控制器
+ * @author wanqihan 2016年6月10日
+ *
+ */
 @Controller
 @RequestMapping("/")
 public class CaculateController {
@@ -28,16 +33,22 @@ public class CaculateController {
 	private CaculateService caculateService;
 	
 	@RequestMapping("/toParam")
-	public String toParam( @RequestParam("fid") Integer fid,Model model){
+	public String toParam( @RequestParam("fid") Integer fid,HttpServletRequest req){
 		Function f = functionService.queryById(fid);
-		model.addAttribute("function", f);
+		req.setAttribute("function", f);
+		req.getSession().invalidate();
 		return RESULT;
 	}
 	@RequestMapping(value="/caculate",method=RequestMethod.POST)
 	public String caculate(CaculateDto caculateDto,HttpServletRequest req){
 		WebFigure wf = caculateService.caculate(caculateDto);
-		req.getSession().setAttribute("wf",wf);
-		req.getSession().setAttribute("UserPlotBinder",new MWHttpSessionBinder(wf));
+		
+		HttpSession session = req.getSession();
+
+		session.setAttribute("wf",wf);
+		session.setAttribute("UserPlotBinder",new MWHttpSessionBinder(wf));
+		req.setAttribute("function", functionService.queryById(caculateDto.getFid()));
+		req.setAttribute("currentParam",caculateDto.getParams());
 		return RESULT;
 	}
 }

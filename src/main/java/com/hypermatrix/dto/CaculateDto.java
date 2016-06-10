@@ -10,7 +10,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class CaculateDto {
-	
+	//功能ID
+	private Integer fid;
 	//包名
 	private String pakageName;
 	//类名
@@ -20,9 +21,16 @@ public class CaculateDto {
 	//提交参数
 	private List<String> params;
 	//路径
+	@SuppressWarnings("unused")
 	private String url;
 	
 	
+	public Integer getFid() {
+		return fid;
+	}
+	public void setFid(Integer fid) {
+		this.fid = fid;
+	}
 	public String getPakageName() {
 		return pakageName;
 	}

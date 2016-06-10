@@ -3,7 +3,6 @@ package com.hypermatrix.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /**
@@ -33,7 +32,7 @@ public class BaseController {
 	public String toCaculate(){
 		return CACULATE;
 	}
-	@RequestMapping("/resource")
+	@RequestMapping("/toResource")
 	public String toResource(){
 		return RESOURCE;
 	}
