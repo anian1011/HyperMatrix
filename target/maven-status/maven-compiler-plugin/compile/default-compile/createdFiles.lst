@@ -1,5 +1,6 @@
 com\hypermatrix\dao\FunctionDao.class
 com\hypermatrix\dao\NewsDao.class
+com\hypermatrix\exception\CaculateException.class
 com\hypermatrix\dao\impl\FunctionDaoImpl.class
 com\hypermatrix\entity\News.class
 com\hypermatrix\constant\Constant.class

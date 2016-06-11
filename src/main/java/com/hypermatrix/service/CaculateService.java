@@ -1,6 +1,7 @@
 package com.hypermatrix.service;
 
 import com.hypermatrix.dto.CaculateDto;
+import com.hypermatrix.exception.CaculateException;
 import com.mathworks.toolbox.javabuilder.webfigures.WebFigure;
 /**
  * 计算service接口
@@ -8,5 +9,5 @@ import com.mathworks.toolbox.javabuilder.webfigures.WebFigure;
  *
  */
 public interface CaculateService {
-	public WebFigure caculate(CaculateDto caculateDto);
+	public WebFigure caculate(CaculateDto caculateDto) throws CaculateException;
 }

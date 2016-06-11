@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hypermatrix.dto.CaculateDto;
 import com.hypermatrix.entity.Function;
+import com.hypermatrix.exception.CaculateException;
 import com.hypermatrix.service.CaculateService;
 import com.hypermatrix.service.FunctionService;
 import com.mathworks.toolbox.javabuilder.web.MWHttpSessionBinder;
@@ -39,14 +40,17 @@ public class CaculateController {
 		req.getSession().invalidate();
 		return RESULT;
 	}
-	@RequestMapping(value="/caculate",method=RequestMethod.POST,produces="charset=utf-8")
-	public String caculate(@RequestParam CaculateDto caculateDto,HttpServletRequest req){
-		WebFigure wf = caculateService.caculate(caculateDto);
-		
+	@RequestMapping(value="/caculate",method=RequestMethod.POST)
+	public String caculate(CaculateDto caculateDto,HttpServletRequest req){
+		WebFigure wf;
 		HttpSession session = req.getSession();
-
-		session.setAttribute("wf",wf);
-		session.setAttribute("UserPlotBinder",new MWHttpSessionBinder(wf));
+		try {
+			wf = caculateService.caculate(caculateDto);
+			session.setAttribute("wf",wf);
+			session.setAttribute("UserPlotBinder",new MWHttpSessionBinder(wf));
+		} catch (CaculateException e) {
+			req.setAttribute("msg",e.getMessage());
+		}
 		req.setAttribute("function", functionService.queryById(caculateDto.getFid()));
 		req.setAttribute("currentParam",caculateDto.getParams());
 		return RESULT;

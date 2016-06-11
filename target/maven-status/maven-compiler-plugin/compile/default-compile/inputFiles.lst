@@ -19,4 +19,5 @@ F:\workspace\Eclipse\hypermatrix\src\main\java\com\hypermatrix\dto\CaculateDto.j
 F:\workspace\Eclipse\hypermatrix\src\main\java\com\hypermatrix\dao\impl\NewsDaoImpl.java
 F:\workspace\Eclipse\hypermatrix\src\main\java\com\hypermatrix\service\FunctionService.java
 F:\workspace\Eclipse\hypermatrix\src\main\java\com\hypermatrix\dao\FunctionDao.java
+F:\workspace\Eclipse\hypermatrix\src\main\java\com\hypermatrix\exception\CaculateException.java
 F:\workspace\Eclipse\hypermatrix\src\main\java\com\hypermatrix\service\impl\CaculateServiceImpl.java

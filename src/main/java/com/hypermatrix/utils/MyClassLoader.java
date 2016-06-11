@@ -1,5 +1,7 @@
 package com.hypermatrix.utils;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 
@@ -11,16 +13,18 @@ import com.hypermatrix.dto.CaculateDto;
  *
  */
 public class MyClassLoader {
+	private static URLClassLoader loader ;
+
 	@SuppressWarnings("rawtypes")
-	public static Class getClassByUrl(CaculateDto caculateDto){
-		URLClassLoader loader ;
-		Class clazz = null ;
-		try {
-			loader = new URLClassLoader(new URL[]{new URL(Constant.FunctionsBaseURL+caculateDto.getPakageName()+".jar")},Thread.currentThread().getContextClassLoader());
-			clazz = loader.loadClass(caculateDto.getUrl());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return clazz;
+	public static Class getClass(CaculateDto caculateDto) throws ClassNotFoundException, MalformedURLException{
+		String url = Constant.FunctionsBaseURL+caculateDto.getPakageName()+".jar";
+		getLoader(url);
+		return loader.loadClass(caculateDto.getUrl());
+	}
+	public static void getLoader(String url) throws MalformedURLException{
+			loader = new URLClassLoader(new URL[]{new URL(url)},Thread.currentThread().getContextClassLoader());
+	}
+	public static void closeLoader() throws IOException{
+		loader.close();
 	}
 }
