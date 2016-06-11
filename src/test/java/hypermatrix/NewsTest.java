@@ -12,7 +12,7 @@ import com.hypermatrix.service.NewsService;
 
 
 public class NewsTest {
-	NewsService service;
+/*	NewsService service;
 	@Before
 	public void before(){
 		ApplicationContext ac = new FileSystemXmlApplicationContext("src/main/resources/spring-beans.xml");
@@ -28,6 +28,8 @@ public class NewsTest {
 	}
 	@Test
 	public void functiuonSaveTest(){
+		News n = new News(null,"中文Forrest",new Date(),"万奇函","fsdaf-"+"-dfsaf");
+		service.save(n);
 		News n;
 		for(int i=1;i<20;i++){
 			n = new News(null,"title:"+i,new Date(),"author:"+i,"fsdaf-"+i+"-dfsaf");
@@ -44,5 +46,5 @@ public class NewsTest {
 	public void functiuonUpdateTest(){
 		News f = new News(6, "title:"+88,new Date(), "author:"+88, "dasfds-"+88+"-fasdfds");
 		service.update(f);
-	}
+	}*/
 }

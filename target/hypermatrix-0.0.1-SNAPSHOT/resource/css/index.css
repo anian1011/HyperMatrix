@@ -1,0 +1,163 @@
+@CHARSET "utf-8";
+*{margin:0px;padding:0px;}
+body{font-family:"微软雅黑", Arial, Helvetica, sans-serif}
+.header,.main,.footer{width:998px;}
+.center{margin:0 auto;}
+.main{
+	background-color:floralwhite;
+}
+div.menu ul
+{
+list-style:none;
+position:relative;
+left:240px;
+}
+div.menu{
+width:100%;
+height:30px;
+background-color:rgba(101, 102, 109, 1);
+text-align:center;
+overflow:hidden;
+}
+.logo img{width:100%;height:100%;display:block}
+.float_left
+{
+    float:left;
+}
+.float_right{
+	float:right;
+}
+div.menu ul li span, div.menu ul li span:visited
+{
+    background-color: rgba(101, 102, 109, 1); /* 背景色 */
+
+    color: #FFFFFF; /* 文字颜色 */
+    display: block; /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+    line-height: 1.35em; /* 行高 */
+	width:90px;
+    padding: 4px 20px; /* 内部填充的距离 */
+    text-decoration: none; /* 不显示超链接下划线 */
+    white-space: nowrap; /* 对于文本内的空白处，不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。 */
+}
+div.menu ul li span:hover
+{
+	cursor:pointer;
+    background-color: #bfcbd6; /* 背景色 */
+    color: #465c71; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+/* 所有class为menu的div中的ul中的a样式(鼠标点击元素时的样式) */
+div.menu ul li span:active
+{
+    background-color: #465c71; /* 背景色 */
+    color: #cfdbe6; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+div.slideBox{ position:relative; width:670px; height:300px; overflow:hidden;}
+div.slideBox ul.items{ position:absolute; float:left; background:none; list-style:none; padding:0px; margin:0px;}
+div.slideBox ul.items li{ float:left; background:none; list-style:none; padding:0px; margin:0px;}
+div.slideBox ul.items li a{ float:left; line-height:normal !important; padding:0px !important; border:none/*For IE.ADD.JENA.201206300844*/;}
+div.slideBox ul.items li a img{ margin:0px !important; padding:0px !important; display:block; border:none/*For IE.ADD.JENA.201206300844*/;}
+div.slideBox div.tips{ position:absolute; bottom:0px; width:100%; height:50px; background-color:#000; overflow:hidden;}
+div.slideBox div.tips div.title{ position:absolute; left:0px; top:0px; height:100%;}
+div.slideBox div.tips div.title a{ color:#FFF; font-size:18px; line-height:50px; margin-left:10px; text-decoration:none;}
+div.slideBox div.tips div.title a:hover{ text-decoration:underline !important;}
+div.slideBox div.tips div.nums{ position:absolute; right:0px; top:0px; height:100%;}
+div.slideBox div.tips div.nums a{ display:inline-block; >float:left/*For IE.ADD.JENA.201206300844*/; width:20px; height:20px; background-color:#FFF; text-indent:-99999px; margin:15px 10px 0px 0px;}
+div.slideBox div.tips div.nums a.active{ background-color:#093;}
+
+::-webkit-scrollbar {
+	width: 15px;
+} /* 这是针对缺省样式 (必须的) */
+::-webkit-scrollbar-track {
+	background-color: darkgrey;
+} /* 滚动条的滑轨背景颜色 */
+::-webkit-scrollbar-thumb {
+	background-color: grey;
+} /* 滑块颜色 */
+::-webkit-scrollbar-button {
+} /* 滑轨两头的监听按钮颜色 */
+::-webkit-scrollbar-corner {
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+#newsTitle{
+	font-size: 20px;position: relative;left:600px;top:-295px;
+}
+#newsUl{
+	padding-left:20px;
+}
+#newsDiv ul li span{
+		font-size:12px;
+		font-family:cursive;
+}
+#newsDiv{ 
+	position:relative;
+	width:410px;
+	height:260px;
+	overflow-y:scroll;
+	top:-286px;
+	left:588px;
+}
+#briefDiv{
+	padding-left:20px;
+	clear:both;
+	color:rgba(13, 111, 183, 1);
+	font-size:15px;
+	line-height:20px;
+	position:relative;
+	top:-260px;
+}
+
+p.briefText{
+	margin:20px 0px;
+	text-indent:25px;
+}
+div h1{
+	font-family:"宋体",Arial,Helvetica,sans-serif;
+	color: DarkSlateGray;
+	padding-top:10px;
+	line-height:25px;
+	font-weight:bold;
+	letter-spacing:0px;
+	text-align:left;
+}
+.separation{
+	width: 900px; height: 4px; border: none; border-top: 4px groove skyblue;
+}
+.caculateItems{
+	position:relative;
+	left:40px;
+	top:-35px;
+}
+#functionMain{
+width: 800px;
+margin: 0px auto;
+border:1px solid #D3D3D3;
+background-color: #F7F7F7;
+text-align:center;
+clear:both;
+}
+#functionMain div{
+	float:left;
+	width:150px;
+	height:170px;
+	margin:30px 57px;
+}
+#functionMain div a img{
+	width:150px;
+	height:150px;
+}
+.footer{ 
+clear:both;
+text-align:center;
+width:998px; 
+height:50px; 
+FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=floralwhite,endColorStr=rgba(178, 207, 135, 1)); /*IE*/ 
+background:-moz-linear-gradient(top,floralwhite,rgba(178, 207, 135, 1));/*火狐*/ 
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(floralwhite), to(rgba(178, 207, 135, 1)));/*谷歌*/ 
+background-image: -webkit-gradient(linear,left bottom,left top,color-start(floralwhite),color-stop(1, rgba(178, 207, 135, 1)));/* Safari & Chrome*/ 
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='floralwhite', endColorstr='rgba(178, 207, 135, 1)'); /*IE6 & IE7*/ 
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='floralwhite', endColorstr='rgba(178, 207, 135, 1)')"; /* IE8 */ 
+} 
+
+
+

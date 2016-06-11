@@ -39,8 +39,8 @@ public class CaculateController {
 		req.getSession().invalidate();
 		return RESULT;
 	}
-	@RequestMapping(value="/caculate",method=RequestMethod.POST)
-	public String caculate(CaculateDto caculateDto,HttpServletRequest req){
+	@RequestMapping(value="/caculate",method=RequestMethod.POST,produces="charset=utf-8")
+	public String caculate(@RequestParam CaculateDto caculateDto,HttpServletRequest req){
 		WebFigure wf = caculateService.caculate(caculateDto);
 		
 		HttpSession session = req.getSession();

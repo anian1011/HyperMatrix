@@ -19,7 +19,7 @@ import com.mathworks.toolbox.javabuilder.MWArray;
 
 
 public class CaculateTest {
-	private CaculateService service;
+	/*private CaculateService service;
 	@Before
 	public void before(){
 		ApplicationContext ac = new FileSystemXmlApplicationContext("src/main/resources/spring-beans.xml");
@@ -55,5 +55,5 @@ public class CaculateTest {
 		dto.setMethodName("test3");
 		dto.setParams(list);
 		System.out.println(service.caculate(dto));
-	}
+	}*/
 }

@@ -7,7 +7,7 @@ package com.hypermatrix.constant;
  */
 public class Constant {
 	//所有功能jar包的根目录
-	public static final String FunctionsBaseURL="file:F:/functions/";
+	public static final String FunctionsBaseURL="file:C:hm_files/function_lib/";
 	//计算结果数量
 	public static final int ResultNumber=1;
 }

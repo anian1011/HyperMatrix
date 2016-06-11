@@ -1,10 +1,17 @@
 package com.hypermatrix.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
+import com.hypermatrix.entity.News;
 import com.hypermatrix.service.NewsService;
 /**
  *  新闻控制层
@@ -17,10 +24,10 @@ public class NewsController {
 
 	@Autowired
 	private NewsService newsService;
-	
-	public String list(Model model){
-		model.addAttribute("newsList",newsService.query());
-		
-		return "shouye";
+	@RequestMapping(method=RequestMethod.POST,value="/queryNews")
+	public @ResponseBody String list(Model model){
+		Gson gson = new Gson();
+		List<News> result = newsService.query();
+		return gson.toJson(result.toArray());
 	}
 }

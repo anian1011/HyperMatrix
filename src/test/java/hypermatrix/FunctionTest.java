@@ -9,7 +9,7 @@ import com.hypermatrix.entity.Function;
 import com.hypermatrix.service.FunctionService;
 
 public class FunctionTest {
-	FunctionService service;
+/*	FunctionService service;
 	@Before
 	public void before(){
 		ApplicationContext ac = new FileSystemXmlApplicationContext("src/main/resources/spring-beans.xml");
@@ -42,6 +42,6 @@ public class FunctionTest {
 		Function f = new Function();
 		service.update(f);
 	}
-
+*/
 	
 }
