@@ -26,6 +26,7 @@ public class Function {
 	//参数（json）
 	private String params;
 	//参数(数组形式用于jsp显示)
+	@SuppressWarnings("unused")
 	private String[] paramArray;
 	
 	public String[] getParamArray() {
