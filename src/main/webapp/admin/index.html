@@ -1,137 +1,76 @@
-﻿<html>
+<!DOCTYPE html>
+<html>
 <head>
-<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-   <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-   <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span3">
-			<div class="accordion" id="accordion-119944">
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-parent="#accordion-119944" data-toggle="collapse" href="#accordion-element-796621">页面</a>
-					</div>
-					<div class="accordion-body collapse in" id="accordion-element-796621">
-						<div class="accordion-inner">
-							新闻
-						</div>
-						<div class="accordion-inner">
-							资源
-						</div>
-						<div class="accordion-inner">
-							图片
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-parent="#accordion-119944" data-toggle="collapse" href="#accordion-element-583674">功能</a>
-					</div>
-					<div class="accordion-body collapse" id="accordion-element-583674">
-						<div class="accordion-inner">
-							功能块...
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-		<div class="span9">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							编号
-						</th>
-						<th>
-							产品
-						</th>
-						<th>
-							交付时间
-						</th>
-						<th>
-							状态
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Default
-						</td>
-					</tr>
-					<tr class="success">
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Approved
-						</td>
-					</tr>
-					<tr class="error">
-						<td>
-							2
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							02/04/2012
-						</td>
-						<td>
-							Declined
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							3
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							03/04/2012
-						</td>
-						<td>
-							Pending
-						</td>
-					</tr>
-					<tr class="info">
-						<td>
-							4
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							04/04/2012
-						</td>
-						<td>
-							Call in to confirm
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</div>
-</body>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+<script src="resource/js/jquery-1.5.1.js"></script>
+<link rel="stylesheet" type="text/css" href="resource/css/easyui.css">
+<link rel="stylesheet" type="text/css" href="resource/css/demo.css">
+<link rel="stylesheet" type="text/css" href="resource/css/icon.css">
+<script type="text/javascript" src="resource/js/jquery.easyui.min.js"></script>
 
+<style>
+article, aside, figure, footer, header, hgroup, menu, nav, section { display: block; }
+.west{width:200px;padding:10px;}
+.north{height:100px;}
+</style>
+</head>
+<body class="easyui-layout">
+  <div region="north" class="north" title="欢迎，admin！">
+    <h1 style="text-align:center">hypermatrix-admin</h1>
+  </div>
+  <div region="center" title="内容">
+    <div class="easyui-tabs" fit="true" border="false" id="tabs">
+      <div title="首页"></div>
+    </div>
+  </div>
+  <div region="west" class="west" title="菜单">
+    <ul id="tree"></ul>
+  </div>
+
+  <script>
+  $(function () {
+	    var treeData = [{
+                    text : "页面图片管理",
+                    attributes : {url : "admin/toPicManage.do"}
+                }, {
+                    text : "新闻管理",
+                    attributes : {url : "admin/toNewsManage.do"}
+                }, {
+                    text : "功能管理",
+                    attributes : {url : "admin/toFunctionManage.do"}
+                }, {
+                    text : "成员管理",
+                    attributes : {url : "admin/toMemberManage.do"}
+                }
+            ];
+       
+    
+    //实例化树形菜单
+    $("#tree").tree({
+        data : treeData,
+        lines : true,
+        onClick : function (node) {
+            if (node.attributes) {
+                Open(node.text, node.attributes.url);
+            }
+        }
+    });
+    //在右边center区域打开菜单，新增tab
+  function Open(text, url) {
+        if ($("#tabs").tabs('exists', text)) {
+            $('#tabs').tabs('select', text);
+        } else {
+            $('#tabs').tabs('add', {
+                title : text,
+                closable : true,
+                href : url
+            });
+        }
+    }
+    
+  
+});
+</script>
+</body>
 </html>

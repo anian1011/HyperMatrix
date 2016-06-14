@@ -1,0 +1,38 @@
+<body>
+
+	<table id="dg" title="新闻列表" style="width:700px;height:250px"
+			data-options="rownumbers:true,singleSelect:true,pagination:true,url:'news/queryNews.do',method:'post'">
+		<thead>
+			<tr>
+				<th data-options="field:'title',width:300,align:'center'">标题</th>
+				<th data-options="field:'author',width:100,align:'center'">作者</th>
+				<th data-options="field:'createTime',width:180,align:'center'">创建时间</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="dlg" class="easyui-dialog" title="Basic Dialog" closed="true" data-options="iconCls:'icon-save'" style="width:850px;height:400px;padding:10px">
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			var pager = $('#dg').datagrid().datagrid('getPager');	// get the pager of datagrid
+			pager.pagination({
+				buttons:[{
+					iconCls:'icon-add',
+					handler:function(id){
+						
+					}
+				},{
+					iconCls:'icon-edit',
+					handler:function(){
+						var row = $('#dg').datagrid('getSelected');
+						if (row==null){
+							$.messager.alert("info","请选择数据！");
+						}else{
+							$("#dlg").dialog('open');
+						}
+					}
+				}]
+			});			
+		})
+	</script>
+</body>
