@@ -8,7 +8,6 @@
 	<li>③由于计算时间可能会较长，需要有loading框提示；</li>
 	<li>③jsp页面使用webfigure标签展示计算结果。</li></ul>
 4,扩展功能：为方便计算功能的扩展(后台管理部分),核心功能尽量与具体的功能解耦合,尽量简化管理人员网站维护时增加计算功能的操作(需考虑m文件的参数名,参数输入框的编写,matlab编译jar包的类名、方法名等等细节)。<br/>
-5,其他功能模块(新闻,资源下载)较简单。<br/>
 ![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/1.png)![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/2.png)
 ![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/3.png)![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/4.png)
 附：以前版本——[Hypermatrix1.0点击这里](http://182.254.246.212)
