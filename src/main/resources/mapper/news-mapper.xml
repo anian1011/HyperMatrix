@@ -11,7 +11,7 @@
 		<result column="news_context" property="context"/>
 	</resultMap>
     <select id="query" resultMap="news">
-        select * from hm_news n
+        select * from hm_news n ORDER BY n.NEWS_CREATE_TIME DESC
     </select>
     <select id="queryById" resultMap="news">
         select * from hm_news n where n.news_id = #{nid}
@@ -25,7 +25,6 @@
     </insert>
     <update id="update" parameterType="News">
     	update hm_news n set n.news_title=#{title},
-    							 n.news_create_time=#{createTime},
     							 n.news_author=#{author},
     							 n.news_context=#{context}
     	where n.news_id = #{nid}

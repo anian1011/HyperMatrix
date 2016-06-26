@@ -9,7 +9,7 @@
 		<result column="function_image" property="image"/>
 		<result column="function_params" property="params"/>
 		<result column="category_id" property="cid"/>
-		<result column="pakage_name" property="pakageName"/>
+		<result column="package_name" property="packageName"/>
 		<result column="class_name" property="className"/>
 		<result column="method_name" property="methodName"/>
 	</resultMap>
@@ -26,12 +26,15 @@
 		delete from hm_function where function_id = #{fid}
     </delete>
     <insert id="save" parameterType="Function">
-        insert into hm_function(category_id,function_name,function_image,function_params,pakage_name,class_name,method_name)
-        values(#{cid},#{fname},#{image},#{params},#{pakageName},#{className},#{methodName})
+        insert into hm_function(category_id,function_name,function_image,function_params,package_name,class_name,method_name)
+        values(#{cid},#{fname},#{image},#{params},#{packageName},#{className},#{methodName})
     </insert>
     <update id="update" parameterType="Function">
     	update hm_function f set f.function_name=#{fname},
-    							 f.function_image=#{image},
+		<if test="image !=null"> f.function_image=#{image}, </if>
+		<if test="packageName !=null"> f.package_name=#{packageName}, </if>
+		<if test="className !=null"> f.class_name=#{className}, </if>
+		<if test="methodName !=null"> f.method_name=#{methodName}, </if>
     							 f.function_params=#{params},
     							 f.category_id=#{cid}
     	where f.function_id = #{fid}
