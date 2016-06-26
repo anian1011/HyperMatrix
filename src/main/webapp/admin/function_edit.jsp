@@ -17,7 +17,7 @@
             <input name="fname" type="text" placeholder="fname" value="${function.fname}" required="required">
         </div>
         <div class="pure-control-group">
-            <label>State</label>
+            <label>分类</label>
             <select name="cid" class="pure-input-1-1">
                 <option value="1" <c:if test='${function.cid==1}'>selected="selected"</c:if>>科学计算</option>
                 <option value="2" <c:if test='${function.cid==2}'>selected="selected"</c:if>>大数据分析</option>

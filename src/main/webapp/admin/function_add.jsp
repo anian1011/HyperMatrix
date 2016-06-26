@@ -15,7 +15,7 @@
             <input name="fname" type="text" placeholder="fname" required="required">
         </div>
         <div class="pure-control-group">
-            <label>State</label>
+            <label>分类</label>
             <select name="cid" class="pure-input-1-1">
                 <option value="1">科学计算</option>
                 <option value="2">大数据分析</option>
@@ -41,7 +41,7 @@
         <div class="pure-control-group">
             <label for="imageFile">功能图片</label>
             <input name="imageFile" type="file" required="required"/>
-            (图片尺寸150*150)
+            <br/>(图片尺寸150*150)
         </div>
         <div class="pure-control-group">
             <label for="jarFile">功能jar包</label>
