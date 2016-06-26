@@ -1,5 +1,5 @@
-﻿HyperMatrix2.0
-================
+﻿HyperMatrix2.0——[Hypermatrix2.0点击这里](http://182.254.246.212:8085)
+=================================================================
 1,spring MVC + Spring + Mybatis框架。<br/>
 2,页面采用div+ajax布局,ajax提交请求,渲染页面。(由于核心功能所限制，主要页面只能使用matlab提供的jsp标签库)。<br/>
 3,应用核心功能——caculate模块：<br/>
@@ -9,12 +9,7 @@
 	<li>③jsp页面使用webfigure标签展示计算结果。</li></ul>
 4,扩展功能：为方便计算功能的扩展(后台管理部分),核心功能尽量与具体的功能解耦合,尽量简化管理人员网站维护时增加计算功能的操作(需考虑m文件的参数名,参数输入框的编写,matlab编译jar包的类名、方法名等等细节)。<br/>
 5,其他功能模块(新闻,资源下载)较简单。<br/>
-
+![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/1.png)![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/2.png)
+![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/3.png)![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/4.png)
 附：以前版本——[Hypermatrix1.0点击这里](http://182.254.246.212)
-===========================
-不足之处：
-<ul>
-<li>1，页面使用iframe，非常容易出现空隙，扭曲。页面无风格，不美观。</li>
-<li>2，维护计算功能复杂，各种细节容易忽视，造成最后计算功能出错。且限制了功能的设定。</li>
-<li>3，速度慢，后台代码混乱无层次。</li>
-</ul>
+=================================================================
