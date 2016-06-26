@@ -13,7 +13,7 @@ public class CaculateDto {
 	//功能ID
 	private Integer fid;
 	//包名
-	private String pakageName;
+	private String packageName;
 	//类名
 	private String className;
 	//方法名
@@ -31,11 +31,11 @@ public class CaculateDto {
 	public void setFid(Integer fid) {
 		this.fid = fid;
 	}
-	public String getPakageName() {
-		return pakageName;
+	public String getPackageName() {
+		return packageName;
 	}
-	public void setPakageName(String pakageName) {
-		this.pakageName = pakageName;
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
 	}
 	public String getClassName() {
 		return className;
@@ -56,7 +56,7 @@ public class CaculateDto {
 		this.params = params;
 	}
 	public String getUrl(){
-		return pakageName+"."+className;
+		return packageName+"."+className;
 	}
 
 	

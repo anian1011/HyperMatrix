@@ -24,9 +24,8 @@ import com.mathworks.toolbox.javabuilder.webfigures.WebFigure;
  */
 @Controller
 @RequestMapping("/")
-public class CaculateController {
-	public static final String RESULT="result.jsp";
-	
+public class CaculateController extends ExceptionHandlerController{
+	public static final String RESULT="WEB-INF/result.jsp";
 	@Autowired
 	private FunctionService functionService;
 	
@@ -44,13 +43,11 @@ public class CaculateController {
 	public String caculate(CaculateDto caculateDto,HttpServletRequest req){
 		WebFigure wf;
 		HttpSession session = req.getSession();
-		try {
+
 			wf = caculateService.caculate(caculateDto);
 			session.setAttribute("wf",wf);
 			session.setAttribute("UserPlotBinder",new MWHttpSessionBinder(wf));
-		} catch (CaculateException e) {
-			req.setAttribute("msg",e.getMessage());
-		}
+
 		req.setAttribute("function", functionService.queryById(caculateDto.getFid()));
 		req.setAttribute("currentParam",caculateDto.getParams());
 		return RESULT;

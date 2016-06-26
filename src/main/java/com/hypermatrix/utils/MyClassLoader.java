@@ -17,7 +17,7 @@ public class MyClassLoader {
 
 	@SuppressWarnings("rawtypes")
 	public static Class getClass(CaculateDto caculateDto) throws ClassNotFoundException, MalformedURLException{
-		String url = Constant.FunctionsBaseURL+caculateDto.getPakageName()+".jar";
+		String url = "file:"+Constant.FunctionsBaseURL+caculateDto.getPackageName()+".jar";
 		getLoader(url);
 		return loader.loadClass(caculateDto.getUrl());
 	}

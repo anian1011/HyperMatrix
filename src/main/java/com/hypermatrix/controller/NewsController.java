@@ -1,6 +1,7 @@
 package com.hypermatrix.controller;
 
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,10 @@ public class NewsController {
 	@Autowired
 	private NewsService newsService;
 	@RequestMapping(method=RequestMethod.POST,value="/queryNews")
-	public @ResponseBody String list(Model model){
+	public @ResponseBody String list(){
 		Gson gson = new Gson();
 		List<News> result = newsService.query();
 		return gson.toJson(result.toArray());
 	}
+
 }

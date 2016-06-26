@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 import com.hypermatrix.entity.Function;
 import com.hypermatrix.service.FunctionService;
 @Controller
-@RequestMapping("/function")
+@RequestMapping(value = "/function")
 public class FunctionController {
 	@Autowired
 	FunctionService functionService;

@@ -2,12 +2,16 @@ package com.hypermatrix.entity;
 
 
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+
 /**
  * 功能实体类
  * @author wanqihan 2016年5月28日
  *
  */
 @Component
+@SuppressWarnings("unused")
 public class Function {
 	//功能id
 	private Integer fid;
@@ -18,7 +22,7 @@ public class Function {
 	//功能图标
 	private String image;
 	//包名
-	private String pakageName;
+	private String packageName;
 	//类名
 	private String className;
 	//方法名
@@ -26,7 +30,6 @@ public class Function {
 	//参数（json）
 	private String params;
 	//参数(数组形式用于jsp显示)
-	@SuppressWarnings("unused")
 	private String[] paramArray;
 	
 	public String[] getParamArray() {
@@ -56,12 +59,15 @@ public class Function {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getPakageName() {
-		return pakageName;
+
+	public String getPackageName() {
+		return packageName;
 	}
-	public void setPakageName(String pakageName) {
-		this.pakageName = pakageName;
+
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
 	}
+
 	public String getClassName() {
 		return className;
 	}
@@ -80,7 +86,5 @@ public class Function {
 	public void setParams(String params) {
 		this.params = params;
 	}
-	
-	
-	
+
 }
