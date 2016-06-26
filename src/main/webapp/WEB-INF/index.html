@@ -59,6 +59,8 @@
                 $("#dynamicDiv").html(data);
                 if(id=="Home"){slide();showNews();}
                 if(id=="Caculate"){displaySvg();}
+				if(id=="About"){setAboutHeight();}
+				if(id=="Resource"){showFile();}
             }
         });
 	}
@@ -100,10 +102,35 @@
             }
         });
 	}
+	function showFile(){
+		$.ajax({
+			type: "POST",
+			url: "file/listFile.do",
+			dataType: "text",
+			success: function(data){
+				var obj = eval(data);
+				var length = obj.length;
+				if(length==0){
+					showError("resource","暂时没有资源！")
+				}else{
+					for(var i=0;i<length;i++){
+						$("#downloadFile").append("<div style='margin: 5px'>"+obj[i]+"<button onclick='download(this)' name='"+obj[i]+"' style='margin:2px 8px;float:right'>下载</button></div><br/>");
+					}
+					$("#downloadFile").css("height",length*35+60);
+				}
+			}
+		});
+	}
+	function download(temp){
+		$("#downloadForm input:first").attr("value",temp.name);
+		$("#downloadForm").submit();
+	}
 	function showError(id,msg){
 		$("#"+id).html("<br/>"+msg+"<br/><br/>");
 	}
-	
+	function setAboutHeight(){
+		$("#about").css("height","1700px");
+	}
 </script>
 
 </body>

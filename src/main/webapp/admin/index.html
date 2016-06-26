@@ -1,76 +1,45 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset=utf-8 />
-<title>JS Bin</title>
-<script src="resource/js/jquery-1.5.1.js"></script>
-<link rel="stylesheet" type="text/css" href="resource/css/easyui.css">
-<link rel="stylesheet" type="text/css" href="resource/css/demo.css">
-<link rel="stylesheet" type="text/css" href="resource/css/icon.css">
-<script type="text/javascript" src="resource/js/jquery.easyui.min.js"></script>
-
-<style>
-article, aside, figure, footer, header, hgroup, menu, nav, section { display: block; }
-.west{width:200px;padding:10px;}
-.north{height:100px;}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypermatrix</title>
+    <script src="resource/js/jquery-1.5.1.js"></script>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="resource/css/layouts/side-menu.css">
 </head>
-<body class="easyui-layout">
-  <div region="north" class="north" title="欢迎，admin！">
-    <h1 style="text-align:center">hypermatrix-admin</h1>
-  </div>
-  <div region="center" title="内容">
-    <div class="easyui-tabs" fit="true" border="false" id="tabs">
-      <div title="首页"></div>
-    </div>
-  </div>
-  <div region="west" class="west" title="菜单">
-    <ul id="tree"></ul>
-  </div>
+<body>
+<div id="layout">
 
-  <script>
-  $(function () {
-	    var treeData = [{
-                    text : "页面图片管理",
-                    attributes : {url : "admin/toPicManage.do"}
-                }, {
-                    text : "新闻管理",
-                    attributes : {url : "admin/toNewsManage.do"}
-                }, {
-                    text : "功能管理",
-                    attributes : {url : "admin/toFunctionManage.do"}
-                }, {
-                    text : "成员管理",
-                    attributes : {url : "admin/toMemberManage.do"}
-                }
-            ];
-       
-    
-    //实例化树形菜单
-    $("#tree").tree({
-        data : treeData,
-        lines : true,
-        onClick : function (node) {
-            if (node.attributes) {
-                Open(node.text, node.attributes.url);
-            }
-        }
+    <div id="menu">
+        <div class="pure-menu pure-menu-open">
+            <a class="pure-menu-heading">Hypermatrix</a>
+
+            <ul>
+                <li><a target="myFrame" href="admin/toPicList.do">页面图片</a></li>
+                <li><a target="myFrame" href="admin/toNewsList.do">新闻管理</a></li>
+                <li><a target="myFrame" href="admin/toFunctionList.do">功能管理</a></li>
+                <li><a target="myFrame" href="admin/toResourceList.do">资源管理</a></li>
+                <li><a target="myFrame" href="admin/toMemberList.do">成员管理</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header">
+            <h1>Hypermatrix</h1>
+        </div>
+        <div class="content">
+            <iframe src="admin/toHome.do" marginheight="0" marginwidth="0" width="100%" height="100%" frameborder="0" scrolling="no" name="myFrame" id="myFrame"></iframe>
+        </div>
+    </div>
+</div>
+<script>
+    $("#myFrame").load(function(){
+        document.getElementById("main").scrollIntoView();
+        var mainheight = $(this).contents().find("body").height()+30;
+        $(this).height(mainheight);
     });
-    //在右边center区域打开菜单，新增tab
-  function Open(text, url) {
-        if ($("#tabs").tabs('exists', text)) {
-            $('#tabs').tabs('select', text);
-        } else {
-            $('#tabs').tabs('add', {
-                title : text,
-                closable : true,
-                href : url
-            });
-        }
-    }
-    
-  
-});
 </script>
 </body>
 </html>

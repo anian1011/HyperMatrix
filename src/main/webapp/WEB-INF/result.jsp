@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="wf" uri="/WEB-INF/webfigures.tld"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,7 +16,7 @@ body {font-family: "微软雅黑", Arial, Helvetica, sans-serif}
 .center {margin: 0 auto;}
 #main {background-color: floralwhite;width: 998px;}
 #main h1 {text-align: center;}
-.footer {clear: both;text-align: center;width: 998px;height: 50px;FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=floralwhite, endColorStr=rgba(178, 207, 135, 1));background: -moz-linear-gradient(top, floralwhite, rgba(178, 207, 135, 1));background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(floralwhite),to(rgba(178, 207, 135, 1)));background-image: -webkit-gradient(linear, left bottom, left top, color-start(floralwhite),color-stop(1, rgba(178, 207, 135, 1)));filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='floralwhite', endColorstr='rgba(178, 207, 135, 1)');-ms-filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='floralwhite', endColorstr='rgba(178, 207, 135, 1)')";}
+.footer {clear: both;text-align: center;width: 998px;height: 50px;background-color:rgba(178, 207, 135, 1);FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=floralwhite, endColorStr=rgba(178, 207, 135, 1));background: -moz-linear-gradient(top, floralwhite, rgba(178, 207, 135, 1));background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(floralwhite),to(rgba(178, 207, 135, 1)));background-image: -webkit-gradient(linear, left bottom, left top, color-start(floralwhite),color-stop(1, rgba(178, 207, 135, 1)));filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='floralwhite', endColorstr='rgba(178, 207, 135, 1)');-ms-filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='floralwhite', endColorstr='rgba(178, 207, 135, 1)')";}
 .shadow {border: #909090 1px solid;background: #fff;color: #333;filter: progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120, strength=3);-moz-box-shadow: 2px 2px 10px #909090;-webkit-box-shadow: 2px 2px 10px #909090;box-shadow: 2px 2px 10px #909090;border-radius: 20px;}
 button {margin:10px;background-color: #7fbf4d;background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d),color-stop(100%, #63a62f));background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);background-image: linear-gradient(top, #7fbf4d, #63a62f);border: 1px solid #63a62f;border-bottom: 1px solid #5b992b;border-radius: 3px;-webkit-box-shadow: inset 0 1px 0 0 #96ca6d;box-shadow: inset 0 1px 0 0 #96ca6d;color: #fff;font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",	Geneva, Verdana, sans-serif;padding: 7px 0 8px 0;text-align: center;text-shadow: 0 -1px 0 #4c9021;width: 150px;}
 button:hover {background-color: #76b347;background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347),color-stop(100%, #5e9e2e));background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);background-image: -o-linear-gradient(top, #76b347, #5e9e2e);background-image: linear-gradient(top, #76b347, #5e9e2e);-webkit-box-shadow: inset 0 1px 0 0 #8dbf67;box-shadow: inset 0 1px 0 0 #8dbf67;cursor: pointer;}
@@ -42,16 +42,16 @@ function loadingFinish(){
 			style="width: 300px; height: 450px; background-color: gainsboro; position: relative; top: 10px; left: 10px;">
 			<h4>设定参数:</h4>
 			
-			<form action="<c:url value="/caculate.do"/>" method="post" style="text-align: center;">
-				<input type="hidden" name="fid" value="${function.fid }"/>
-				<input type="hidden" name="pakageName" value="${function.pakageName }"> 
-				<input type="hidden" name="className" value="${function.className }"> 
-				<input type="hidden" name="methodName" value="${function.methodName }">
+			<form onsubmit="loading()" action="<c:url value="/caculate.do"/>" method="post" style="text-align: right;width:270px;">
+				<input type="hidden" name="fid" value="${function.fid }" required="required"/>
+				<input type="hidden" name="packageName" value="${function.packageName }" required="required">
+				<input type="hidden" name="className" value="${function.className }" required="required">
+				<input type="hidden" name="methodName" value="${function.methodName }" required="required">
 				<c:forEach items="${function.paramArray }" var="item" varStatus="status">
-			${item}:<input type="text" name="params[${status.index }]" value='<c:if test="${currentParams!=null }">${currentParamas[status.index] }</c:if>'><br/>
+			${item}:<input type="text" required="required" name="params[${status.index }]" value='<c:if test="${currentParams!=null }">${currentParamas[status.index] }</c:if>'><br/>
 				</c:forEach>
 				<p class="center">
-					<button onclick="loading();submit(this.parent)">提交</button>
+					<button  type="submit">提交</button>
 				</p>
 			</form>
 		
