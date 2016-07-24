@@ -1,4 +1,4 @@
-﻿HyperMatrix2.0——[Hypermatrix2.0点击这里](http://182.254.246.212:8085)
+﻿HyperMatrix2.0——[Hypermatrix2.0点击这里](http://182.254.246.212)
 =================================================================
 1,spring MVC + Spring + Mybatis框架。<br/>
 2,页面采用div+ajax布局,ajax提交请求,渲染页面。(由于核心功能所限制，主要页面只能使用matlab提供的jsp标签库)。<br/>
@@ -10,5 +10,5 @@
 4,扩展功能：为方便计算功能的扩展(后台管理部分),核心功能尽量与具体的功能解耦合,尽量简化管理人员网站维护时增加计算功能的操作(需考虑m文件的参数名,参数输入框的编写,matlab编译jar包的类名、方法名等等细节)。<br/>
 ![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/1.png)![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/2.png)
 ![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/3.png)![image](https://github.com/anian1011/HyperMatrix/blob/master/md_pic/4.png)
-附：以前版本——[Hypermatrix1.0点击这里](http://182.254.246.212)
+
 =================================================================
