@@ -1,7 +1,7 @@
 ﻿HyperMatrix2.0——[Hypermatrix2.0点击这里](http://182.254.246.212)
 =================================================================
 1,spring MVC + Spring + Mybatis框架。<br/>
-2,页面采用div+ajax布局,ajax提交请求,渲染页面。(由于核心功能所限制，主要页面只能使用matlab提供的jsp标签库)。<br/>
+2,页面除计算页面使用jsp外其余全部使用html,采用div+ajax布局,页面跳转全部使用ajax提交请求,渲染页面。(由于核心功能所限制，计算页面只能使用matlab提供的jsp标签库)。<br/>
 3,应用核心功能——caculate模块：<br/>
 	<ul><li>①matlab的javabuilder根据写好的.m文件编译生成jar包，一个jar包对应此项目的一个功能，存放在服务器固定路径下，该路径全部存放计算功能的jar包；</li>
 	<li>②CaculateService类根据controller传来的参数，动态加载功能路径下的指定功能的jar包，调用其中方法，传入参数，返回结果到jsp页面；</li>
